@@ -7,8 +7,6 @@ import Menu from "./components/menu/Menu";
 
 import Projects from "./components/projects/Projects";
 
-import Footer from "./components/footer/Footer";
-
 import Home from "./components/intro";
 
 import "./app.scss"

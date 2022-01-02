@@ -22,15 +22,19 @@ export default function Menu({ isOpen, setOpen }) {
         <div className={"menu " + (isOpen && "active")}>
             <ul>
                 <li onClick={() => setOpen(false)}>
+                    { /* eslint-disable-next-line */}
                     <a href="javascript:void(0);" onClick={handleHomeClick} rel="noreferrer">Home</a>
                 </li>
                 <li onClick={() => setOpen(false)}>
+                    { /* eslint-disable-next-line */}
                     <a href="javascript:void(0);" onClick={handleProjectClick} rel="noreferrer">Projects</a>
                 </li>
                 <li onClick={() => setOpen(false)}>
+                { /* eslint-disable-next-line */}
                     <a >Experience</a>
                 </li>
                 <li onClick={() => setOpen(false)}>
+                { /* eslint-disable-next-line */}
                     <a href="javascript:void(0);" onClick={handleContactClick} rel="noreferrer">Contact Me</a>
                 </li>
                 {/* <li onClick={() => setOpen(false)}>
