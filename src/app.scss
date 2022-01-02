@@ -1,0 +1,30 @@
+.app {
+    height: 100vh;
+
+    .sections {
+        width: 100%;
+        height: calc(100vh - 70px); // each section's height = 100vh - topbar's height(which is 70px (refer to topbar.scss))
+        //background-color: lightsalmon;
+
+        position: relative; // so that the text typed is not hidden behind the background color
+        top: 70px; // start section after 70px (which is at end of topbar)
+
+        scroll-behavior: smooth;
+        
+
+        scroll-snap-type: y mandatory; // this makes smooth scrolling from one section to another. "y mandatory" means y axis scrolling for snap type is mandatory
+        
+        scrollbar-width: none; // for firefox
+        &::-webkit-scrollbar{ // applies no scrollbar for other browsers too. 
+            display: none;
+        }
+
+        > * { // the ">" indicates "for each element"
+            width: 100vw;
+            height: calc(100vh - 70px);
+            scroll-snap-align: start; // activaate snap type if user starts scrolling for each section.
+        }
+
+
+    }
+}

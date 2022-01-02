@@ -1,0 +1,122 @@
+@import "../../global.scss";
+
+.topbar {
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    //background-color: rgba(220, 20, 60, 0.699);
+    color: $mainColor;
+    position: fixed; //you dont want the topbar to move even when u scroll down
+    top: 0;
+    transition: all 1s ease-in; // all transitions (rotations) happen after 1 second
+
+    z-index: 3; // helps to maintain topbar on top
+
+    .wrapper {
+        padding: 10px 30px; //bottom=10px, left and right=30px
+        display: flex; // activating flexbox
+        align-items: center; // centeralizing things.
+        justify-content: space-between; // helps elements inside the wrapper have space between them
+
+        .left {
+            display: flex; // to make items appear in horizonatal order
+            align-items: center;
+
+            // .logo {
+            //     font-size: 40px;
+            //     font-weight: 700;
+            //     text-decoration: none;
+            //     color: inherit; // will inherit colour from parent (ie, topbar)
+            //     margin-right: 40px;
+            // }
+
+            .hamburger {
+                width: 32px;
+                height: 25px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                cursor: pointer;
+
+                span {
+                    width: 100%;
+                    height: 3px;
+                    background-color: $mainColor;
+                    transform-origin: left; // do this so that when the hamburger lines transform(rotate)... they rotate from left and not from center
+                    transition: all 1s ease; // all transitions (rotations) happen after 1 second
+                }
+            }
+
+            .itemContainer {
+                display: flex;
+                align-items: center;
+                margin-left: 30px;
+
+                .icon {
+                    font-size: 18px;
+                    margin-right: 5px;
+                }
+            }
+
+            span {
+                font-size: 15px;
+                font-weight: 500;
+            }
+
+            #topbarLink {
+                display: flex;
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+        
+        .right {
+            .logo {
+                font-size: 40px;
+                font-weight: 700;
+                text-decoration: none;
+                color: inherit; // will inherit colour from parent (ie, topbar)
+                margin-right: 0px;
+                cursor: pointer;
+            }
+
+            // .hamburger {
+            //     width: 32px;
+            //     height: 25px;
+            //     display: flex;
+            //     flex-direction: column;
+            //     justify-content: space-between;
+            //     cursor: pointer;
+
+            //     span {
+            //         width: 100%;
+            //         height: 3px;
+            //         background-color: $mainColor;
+            //         transform-origin: left; // do this so that when the hamburger lines transform(rotate)... they rotate from left and not from center
+            //         transition: all 1s ease; // all transitions (rotations) happen after 1 second
+            //     }
+            // }
+        }
+    }
+
+    &.active {
+        background-color: $mainColor;
+        color: white;
+
+        .hamburger {
+            span{
+                &:first-child{ // first line
+                    background-color: white;
+                    transform: rotate(45deg);
+                }
+                &:nth-child(2){ //2nd child
+                    opacity: 0;
+                }
+                &:last-child{
+                    background-color: white;
+                    transform: rotate(-45deg); // want a cross
+                }
+            }
+        }
+    }
+}

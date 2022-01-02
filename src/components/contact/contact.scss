@@ -1,0 +1,115 @@
+@import "../../global.scss";
+
+.contact {
+
+    width: 100vw;
+    // width: 100%;
+    height: calc(100vh - 70px); // each section's height = 100vh - topbar's height(which is 70px (refer to topbar.scss))
+    //background-color: lightsalmon;
+
+    position: relative; // so that the text typed is not hidden behind the background color
+    top: 70px; // start section after 70px (which is at end of topbar)
+
+
+    @import "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap";
+
+    // width: auto;
+    // margin: 0 auto;
+
+    align-items: center;
+    justify-content: center;
+
+    padding-left: 30vh;
+   
+
+    // background-color: rgb(248, 246, 253);
+    font-family: "Inter", sans-serif;
+    
+    /* Contact.js */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    input {
+        font-family: "Inter", sans-serif;
+        width: 60%;
+    }
+
+    textarea {
+        font-family: "Inter", sans-serif;
+        padding: 20px;
+        border-radius: 3px;
+        margin-bottom: 20px;
+        border: 1px solid lightgray;
+        background: #fff;
+        font-size: 16px;
+        color: rgb(0, 0, 32);
+        outline: none;
+        &:focus {
+            border: 1px solid rgb(0, 0, 196);
+        }
+    }
+    button {
+        font-family: "Inter", sans-serif;
+    }
+    
+    .form {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        >h1 {
+            margin-bottom: 30px;
+            color: white;
+        }
+        >input {
+            padding: 20px;
+            border-radius: 3px;
+            margin-bottom: 20px;
+            border: 1px solid lightgray;
+            background: #fff;
+            font-size: 16px;
+            color: $mainColor;
+            outline: none;
+            &:focus {
+                border: 1px solid rgb(0, 0, 196);
+            }
+        }
+        >textarea {
+            height: 150px;
+            max-width: 600px;
+            min-height: 100px;
+        }
+        >label {
+            padding-bottom: 10px;
+            color: white;
+            font-weight: bold;
+            align-items: flex-end;
+            
+            #required {
+                color: red;
+                font-weight: 400;
+            }
+        }
+        >button {
+            padding: 20px;
+            border: none;
+            background-color: rgb(0, 0, 196);
+            font-weight: 500;
+            font-size: 20px;
+            border-radius: 3px;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+            margin-top: 10px;
+            max-width: 600px;
+            &:hover {
+                background-color: rgb(0, 167, 196);
+            }
+        }
+    }
+
+
+}
